@@ -1,0 +1,15 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: '3.1'
+services:
+    php-xdebug3_apache-7.4:
+        build: .
+        working_dir: '/var/www/html'
+        volumes:
+            - './code:/var/www/html'
+            - './conf/php-ini-overrides.ini:/usr/local/etc/php/conf.d/xdebug.ini'
+            - './logs/xdebug.log:/var/log/xdebug.log'
+        ports:
+            - '8080:80'
+            - '9002:9003'
